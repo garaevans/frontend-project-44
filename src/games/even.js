@@ -1,14 +1,10 @@
 import readlineSync from 'readline-sync';
+import { greetPlayer, rules, maxNumberOfRounds, generateRandomNum } from '../index.js';
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}!`);
+const evenGame = () => {
+  const playerName = greetPlayer();
 
-  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  console.log(rule);
-
-  const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(rules.even);
 
   const isEven = (num) => num % 2 === 0;
 
@@ -20,7 +16,7 @@ export default () => {
     return [playerAnswer, correctAnswer];
   };
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < maxNumberOfRounds; i += 1) {
     const [playerAnswer, correctAnswer] = startRound();
     if (playerAnswer === correctAnswer) {
       console.log('Correct!');
@@ -29,5 +25,8 @@ export default () => {
       return;
     }
   }
+
   console.log(`Congratulations, ${playerName}!`);
 };
+
+export default evenGame;
