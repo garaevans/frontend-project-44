@@ -1,10 +1,12 @@
 import readlineSync from 'readline-sync';
-import { greetPlayer, rules, maxNumberOfRounds, generateRandomNum } from '../index.js';
+import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
 
 const evenGame = () => {
   const playerName = greetPlayer();
 
   console.log(rules.even);
+
+  const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const isEven = (num) => num % 2 === 0;
 
