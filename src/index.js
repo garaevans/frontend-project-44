@@ -7,11 +7,10 @@ export const greetPlayer = () => {
   return playerName;
 };
 
-export const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 export const maxNumberOfRounds = 3;
 
 export const rules = {
   even: 'Answer "yes" if the number is even, otherwise answer "no".',
   calc: 'What is the result of the expression?',
+  gcd: 'Find the greatest common divisor of given numbers.',
 }
