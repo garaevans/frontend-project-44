@@ -1,10 +1,12 @@
 import readlineSync from 'readline-sync';
-import { greetPlayer, rules, maxNumberOfRounds, generateRandomNum  } from '../index.js';
+import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
 
 const calcGame = () => {
   const playerName = greetPlayer();
 
   console.log(rules.calc);
+
+  const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const operators = ['+', '-', '*'];
 
@@ -19,9 +21,9 @@ const calcGame = () => {
   };
 
   const startRound = () => {
-    const [firstNum, secondNum] = getPairOfNumbers();
+    const [randomNum1, randomNum2] = getPairOfNumbers();
     const operator = getOperator(operators);
-    const expression = `${firstNum} ${operator} ${secondNum}`;
+    const expression = `${randomNum1} ${operator} ${randomNum2}`;
     console.log(`Question: ${expression}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = calculate(firstNum, secondNum, operator).toString();
