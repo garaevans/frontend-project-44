@@ -1,12 +1,11 @@
 import readlineSync from 'readline-sync';
+import generateRandomNum from '../utils.js';
 import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
 
 const gcdGame = () => {
   const playerName = greetPlayer();
 
   console.log(rules.gcd);
-
-  const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const getGCD = (a, b) => {
     while (a !== b) {
