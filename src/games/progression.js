@@ -1,12 +1,11 @@
 import readlineSync from 'readline-sync';
+import generateRandomNum from '../utils.js';
 import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
 
 const progressionGame = () => {
   const playerName = greetPlayer();
 
   console.log(rules.progression);
-
-  const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const generateProgression = (startNum, step, length) => {
     const progression = [];
