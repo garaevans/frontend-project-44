@@ -23,31 +23,28 @@ make install
 npm link
 ```
 
-### brain-even
+## Run
+
 ```bash
 brain-even
 ```
 [![asciicast](https://asciinema.org/a/oknXtj71yOUIZwSspa6aZDz34.svg)](https://asciinema.org/a/oknXtj71yOUIZwSspa6aZDz34)
 
-### brain-calc
 ```bash
 brain-calc
 ```
 [![asciicast](https://asciinema.org/a/y7etAJwQW1cHaNL3uIcG8XGoa.svg)](https://asciinema.org/a/y7etAJwQW1cHaNL3uIcG8XGoa)
 
-### brain-gcd
 ```bash
 brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/7yv0l9fXW28n65AKbx4OKk3Jz.svg)](https://asciinema.org/a/7yv0l9fXW28n65AKbx4OKk3Jz)
 
-### brain-progression
 ```bash
 brain-progression
 ```
 [![asciicast](https://asciinema.org/a/dU4mB4rcLlFTB4thksmw6300v.svg)](https://asciinema.org/a/dU4mB4rcLlFTB4thksmw6300v)
 
-### brain-prime
 ```bash
 brain-prime
 ```
