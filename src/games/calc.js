@@ -11,8 +11,6 @@ const calcGame = () => {
 
   const getOperator = (operators) => operators[generateRandomNum(0, operators.length - 1)];
 
-  const getPairOfNumbers = () => [generateRandomNum(1, 25), generateRandomNum(1, 25)];
-
   const calculate = (num1, num2, operator) => {
     if (operator === '+') return num1 + num2;
     if (operator === '-') return num1 - num2;
@@ -20,12 +18,13 @@ const calcGame = () => {
   };
 
   const startRound = () => {
-    const [randomNum1, randomNum2] = getPairOfNumbers();
+    const randomNum1 = generateRandomNum(1, 25);
+    const randomNum2 = generateRandomNum(1, 25);
     const operator = getOperator(operators);
     const expression = `${randomNum1} ${operator} ${randomNum2}`;
     console.log(`Question: ${expression}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = calculate(firstNum, secondNum, operator).toString();
+    const correctAnswer = calculate(randomNum1, randomNum2, operator).toString();
     return [playerAnswer, correctAnswer];
   };
 
