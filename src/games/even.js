@@ -5,9 +5,8 @@ const isEven = (num) => num % 2 === 0;
 
 const startRound = () => {
   const randomNum = generateRandomNum(1, 100);
-  const question = randomNum;
   const correctAnswer = isEven(randomNum) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  return [randomNum, correctAnswer];
 };
 
 const evenGame = () => startGame('even', startRound);
