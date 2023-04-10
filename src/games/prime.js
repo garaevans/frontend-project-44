@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import generateRandomNum from '../utils.js';
-import { greetPlayer, rules, maxNumberOfRounds } from "../index.js";
+import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
 
 const primeGame = () => {
   const playerName = greetPlayer();
@@ -19,7 +19,7 @@ const primeGame = () => {
     }
 
     return true;
-  }
+  };
 
   const startRound = () => {
     const randomNum = generateRandomNum(1, 25);
@@ -40,6 +40,6 @@ const primeGame = () => {
   }
 
   console.log(`Congratulations, ${playerName}!`);
-}
+};
 
 export default primeGame;

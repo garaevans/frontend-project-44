@@ -15,7 +15,7 @@ const progressionGame = () => {
       current += step;
       progression.push(current);
     }
-  
+
     return progression;
   };
 
@@ -31,7 +31,7 @@ const progressionGame = () => {
     const correctAnswer = missingNum.toString();
 
     progression[randomIndex] = '..';
-    console.log(`Question: ${progression.join(' ')}`);;
+    console.log(`Question: ${progression.join(' ')}`);
     const playerAnswer = readlineSync.question('Your answer: ');
 
     return [playerAnswer, correctAnswer];

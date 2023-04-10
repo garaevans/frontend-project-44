@@ -9,18 +9,18 @@ const calcGame = () => {
 
   const operators = ['+', '-', '*'];
 
-  const getOperator = (operators) => operators[generateRandomNum(0, operators.length - 1)];
-
   const calculate = (num1, num2, operator) => {
-    if (operator === '+') return num1 + num2;
-    if (operator === '-') return num1 - num2;
-    if (operator === '*') return num1 * num2;
+    let result;
+    if (operator === '+') result = num1 + num2;
+    if (operator === '-') result = num1 - num2;
+    if (operator === '*') result = num1 * num2;
+    return result;
   };
 
   const startRound = () => {
     const randomNum1 = generateRandomNum(1, 25);
     const randomNum2 = generateRandomNum(1, 25);
-    const operator = getOperator(operators);
+    const operator = operators[generateRandomNum(0, operators.length - 1)];
     const expression = `${randomNum1} ${operator} ${randomNum2}`;
     console.log(`Question: ${expression}`);
     const playerAnswer = readlineSync.question('Your answer: ');
