@@ -1,44 +1,25 @@
-import readlineSync from 'readline-sync';
 import generateRandomNum from '../utils.js';
-import { greetPlayer, rules, maxNumberOfRounds } from '../index.js';
+import startGame from '../index.js';
 
-const calcGame = () => {
-  const playerName = greetPlayer();
+const operators = ['+', '-', '*'];
 
-  console.log(rules.calc);
-
-  const operators = ['+', '-', '*'];
-
-  const calculate = (num1, num2, operator) => {
-    let result;
-    if (operator === '+') result = num1 + num2;
-    if (operator === '-') result = num1 - num2;
-    if (operator === '*') result = num1 * num2;
-    return result;
-  };
-
-  const startRound = () => {
-    const randomNum1 = generateRandomNum(1, 25);
-    const randomNum2 = generateRandomNum(1, 25);
-    const operator = operators[generateRandomNum(0, operators.length - 1)];
-    const expression = `${randomNum1} ${operator} ${randomNum2}`;
-    console.log(`Question: ${expression}`);
-    const playerAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = calculate(randomNum1, randomNum2, operator).toString();
-    return [playerAnswer, correctAnswer];
-  };
-
-  for (let i = 0; i < maxNumberOfRounds; i += 1) {
-    const [playerAnswer, correctAnswer] = startRound();
-    if (playerAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${playerName}!`);
+const calculate = (num1, num2, operator) => {
+  let result;
+  if (operator === '+') result = num1 + num2;
+  if (operator === '-') result = num1 - num2;
+  if (operator === '*') result = num1 * num2;
+  return result;
 };
+
+const startRound = () => {
+  const randomNum1 = generateRandomNum(1, 25);
+  const randomNum2 = generateRandomNum(1, 25);
+  const operator = operators[generateRandomNum(0, operators.length - 1)];
+  const question = `${randomNum1} ${operator} ${randomNum2}`;
+  const correctAnswer = calculate(randomNum1, randomNum2, operator).toString();
+  return [question, correctAnswer];
+};
+
+const calcGame = () => startGame('calc', startRound);
 
 export default calcGame;
