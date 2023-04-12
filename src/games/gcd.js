@@ -1,9 +1,11 @@
-import generateRandomNum from '../utils.js';
+import generateRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const getGCD = (num1, num2) => {
-  let a = num1;
-  let b = num2;
+const rule = 'Find the greatest common divisor of given numbers.';
+
+const getGCD = (number1, number2) => {
+  let a = number1;
+  let b = number2;
   while (a !== b) {
     if (a > b) {
       a -= b;
@@ -15,14 +17,14 @@ const getGCD = (num1, num2) => {
   return a;
 };
 
-const startRound = () => {
-  const randomNum1 = generateRandomNum(1, 25);
-  const randomNum2 = generateRandomNum(1, 25);
-  const question = `${randomNum1} ${randomNum2}`;
-  const correctAnswer = getGCD(randomNum1, randomNum2).toString();
-  return [question, correctAnswer];
+const generateRound = () => {
+  const randomNumber1 = generateRandomNumber(1, 25);
+  const randomNumber2 = generateRandomNumber(1, 25);
+  const question = `${randomNumber1} ${randomNumber2}`;
+  const answer = getGCD(randomNumber1, randomNumber2).toString();
+  return [question, answer];
 };
 
-const gcdGame = () => startGame('gcd', startRound);
+const runGame = () => startGame(rule, generateRound);
 
-export default gcdGame;
+export default runGame;
