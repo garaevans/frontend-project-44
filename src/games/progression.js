@@ -1,10 +1,12 @@
-import generateRandomNum from '../utils.js';
+import generateRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const generateProgression = (startNum, step, length) => {
+const rule = 'What number is missing in the progression?';
+
+const generateProgression = (startNumber, step, length) => {
   const progression = [];
-  progression[0] = startNum;
-  let current = startNum;
+  progression[0] = startNumber;
+  let current = startNumber;
   for (let i = 1; i < length; i += 1) {
     current += step;
     progression.push(current);
@@ -13,23 +15,22 @@ const generateProgression = (startNum, step, length) => {
   return progression;
 };
 
-const startRound = () => {
-  const startNum = generateRandomNum(1, 25);
-  const step = generateRandomNum(1, 10);
-  const length = generateRandomNum(5, 10);
-  const progression = generateProgression(startNum, step, length);
+const generateRound = () => {
+  const startNumber = generateRandomNumber(1, 25);
+  const step = generateRandomNumber(1, 10);
+  const length = generateRandomNumber(5, 10);
+  const progression = generateProgression(startNumber, step, length);
 
-  const randomIndex = generateRandomNum(0, length - 1);
-  const missingNum = progression[randomIndex];
+  const hiddenIndex = generateRandomNumber(0, progression.length - 1);
 
-  const correctAnswer = missingNum.toString();
+  const answer = progression[hiddenIndex].toString();
 
-  progression[randomIndex] = '..';
+  progression[hiddenIndex] = '..';
   const question = progression.join(' ');
 
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
-const progressionGame = () => startGame('progression', startRound);
+const runGame = () => startGame(rule, generateRound);
 
-export default progressionGame;
+export default runGame;
