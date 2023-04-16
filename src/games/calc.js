@@ -6,23 +6,16 @@ const rule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calculate = (number1, number2, operator) => {
-  let result;
-
   switch (operator) {
     case '+':
-      result = number1 + number2;
-      break;
+      return number1 + number2;
     case '-':
-      result = number1 - number2;
-      break;
+      return number1 - number2;
     case '*':
-      result = number1 * number2;
-      break;
+      return number1 * number2;
     default:
       throw new Error(`Unknown operator: '${operator}'!`);
   }
-
-  return result;
 };
 
 const generateRound = () => {
