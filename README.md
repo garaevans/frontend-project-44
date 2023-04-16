@@ -1,9 +1,6 @@
 # Brain Games
 
-### Hexlet tests and linter status:
 [![Actions Status](https://github.com/garaevans/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/garaevans/frontend-project-44/actions)
-
-### Code Climate status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/725bb8b793761f8ff3c8/maintainability)](https://codeclimate.com/github/garaevans/frontend-project-44/maintainability)
 
 "Brain Games" is a set of five console games built on the principle of popular mobile brain training apps. Each game asks questions that require correct answers. After three correct answers, the game is considered passed. Incorrect answers end the game and offer to start it again. The games are:
@@ -13,6 +10,9 @@
 - **brain-even** — Determining even numbers.
 - **brain-gcd** — Determining the greatest common divisor.
 - **brain-prime** — Determining a prime number.
+
+## System Requirements
+- Node.js 16.0.0 or newer
 
 ## Setup
 
